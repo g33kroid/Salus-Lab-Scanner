@@ -4,8 +4,8 @@ from termcolor import colored
 def get_assigned_ip():
     #Checking the Wifi Card and Ethernet for any IP Address
 
-    ethernet = subprocess.check_output('ifconfig eth0 | grep inet | cut -d " " -f10 ',shell = True)
-    wifi = subprocess.check_output('ifconfig wlan0 | grep inet | cut -d " " -f10 ',shell= True)
+    ethernet = subprocess.check_output('ifconfig eth0 | grep inet | cut -d " " -f10 ;exit',shell = True)
+    wifi = subprocess.check_output('ifconfig wlan0 | grep inet | cut -d " " -f10 ;exit',shell= True)
 
     if(ethernet == "" and wifi == ""):
         print colored("[x] No IP assigned .... Check Internet Connection ",'red')
