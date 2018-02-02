@@ -1,5 +1,6 @@
 import subprocess
 from termcolor import colored
+import sys
 
 def get_assigned_ip():
     #Checking the Wifi Card and Ethernet for any IP Address
@@ -9,6 +10,7 @@ def get_assigned_ip():
 
     if(ethernet == "" and wifi == ""):
         print colored("[x] No IP assigned .... Check Internet Connection ",'red')
+        sys.exit(0)
     else:
 
         ip_ether = str(ethernet).split("\n")
@@ -16,4 +18,4 @@ def get_assigned_ip():
 
         ip_wifi = str(wifi).split("\n")
         print colored("Wifi IP : "+ ip_wifi[0],'yellow')
-    return ip_ether[0] , ip_wifi[0]
+        return ip_ether[0] , ip_wifi[0]

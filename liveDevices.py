@@ -14,7 +14,7 @@ def getInterfaceIPs(ip24):
     interface_ips = []
     ip = ip24.split(".")
     ip = ip[0]+"."+ip[1]+"."+ip[2]+"."
-    for i in range(0,255):
+    for i in range(2,255):
         tmp = ip+str(i)
         interface_ips.append(tmp)
     return interface_ips
